@@ -1,0 +1,29 @@
+name: Panache
+type: theme
+base theme: classy
+description: A responsive theme based on bootstrap 4.
+package: 'Panache'
+core: 8.x
+core_version_requirement: ^8 || ^9
+libraries:
+  - core/jquery
+  - core/drupal
+  - core/drupalSettings
+  - panache/global-styling
+
+regions:
+  header_left : 'Header left'
+  header_center: 'Header center'
+  header_right: 'Header right'
+  header_navigation: 'Header Navigation'
+  banner_slideshow: 'Banner Slideshow'
+  page_title: 'Page title'
+  content: 'Content'
+  left_sidebar: 'Left sidebar'
+  right_sidebar: 'Right sidebar'
+  footer: 'Footer'
+
+# Information added by Drupal.org packaging script on 2020-04-28
+version: '8.x-1.1'
+project: 'panache'
+datestamp: 1588086762

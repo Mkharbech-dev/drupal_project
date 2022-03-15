@@ -1,0 +1,155 @@
+form {
+  background: $white;
+  box-shadow: $box-shadow;
+  padding: rem(20px);
+
+  .field--name-user-picture {
+    border-radius: 0;
+    height: auto;
+    width: auto;
+  }
+}
+
+label {
+  display: block;
+  font-family: $raleway-semibold;
+  margin-bottom: rem(5px);
+
+  &.option {
+    font-family: $raleway-semibold;
+  }
+}
+
+input,
+select {
+  color: $black;
+}
+
+input,
+textarea,
+select {
+  background: $light-grey;
+  border: 0;
+  border-radius: 25px;
+  box-shadow: none;
+  color: $black;
+  line-height: 1.6;
+  max-width: 100%;
+  padding: rem(10px 20px);
+  width: auto;
+}
+
+textarea {
+  height: rem(180px);
+}
+
+select {
+  appearance: none;
+  background: url('../../images/down-arrow.png') no-repeat center right 10px ;
+  background-color: $light-grey;
+  background-size: 15px;
+  min-width: rem(140px);
+  padding: rem(10px 20px);
+  width: auto;
+}
+
+input {
+
+  &[type = 'checkbox'] {
+    appearance: none;
+    background-color: $light-grey;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    height: rem(18px);
+    margin: rem(5px 5px 5px 0);
+    position: relative;
+    transition: $transition;
+    vertical-align: middle;
+    width: rem(18px);
+
+    &:checked {
+      background-color: $grey-text;
+
+      &::before {
+        color: $light-grey;
+        content: '\f00c';
+        font-family: $fontawesome;
+        font-size: rem(10px);
+        font-weight: $bold;
+        left: 4px;
+        position: absolute;
+        top: 4px;
+      }
+    }
+  }
+
+  &[type= 'search'] {
+    box-sizing: border-box;
+    height: rem(46px);
+  }
+
+  &[type = 'radio'] {
+    appearance: none;
+    background-color: $light-grey;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: rem(20px);
+    margin: rem(5px 5px 5px 0);
+    position: relative;
+    transition: $transition;
+    vertical-align: middle;
+    width: rem(20px);
+
+    &:hover {
+      background-color: $grey;
+      transition: $transition;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:checked {
+      background-color: $grey-text;
+
+      &::before {
+        background: $light-grey;
+        border-radius: 50%;
+        content: ' ';
+        height: rem(8px);
+        left: rem(6px);
+        position: absolute;
+        top: rem(6px);
+        width: rem(8px);
+      }
+    }
+  }
+
+  &[type = 'submit'],
+  &[type = 'button'] {
+    @include panache-button($pink);
+    height: auto;
+    width: auto;
+  }
+}
+
+.fieldset-legend {
+  display: block;
+  font-family: $raleway-semibold;
+  margin-bottom: rem(5px);
+}
+
+::placeholder {
+  color: $grey-text;
+  font-family: $raleway-regular;
+}
+
+.form-textarea-wrapper {
+  textarea {
+    width: auto;
+  }
+}

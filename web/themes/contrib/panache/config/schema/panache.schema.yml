@@ -1,0 +1,3 @@
+panache.settings:
+  type: theme_settings
+  label: 'Panache theme settings'

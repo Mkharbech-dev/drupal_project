@@ -1,0 +1,15 @@
+global-styling:
+  version: 1.0
+  css:
+    theme:
+      dist/css/styles.css: {}
+      dist/vendors/css/slick.css: {}
+      dist/vendors/css/slick-theme.css: {}
+      dist/vendors/css/fontawesome.css: {}
+      https://use.typekit.net/rsg4scl.css: { type: external }
+  js:
+    dist/js/script.js: {}
+    dist/vendors/js/slick.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

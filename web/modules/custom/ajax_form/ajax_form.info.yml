@@ -1,0 +1,7 @@
+name: 'Custom AJAX form'
+type: module
+# Formulaire ajax qui marche
+description: 'Provides a working AJAX Form.'
+# package: User Interface
+package: 'YWD'
+core_version_requirement: ^8 || ^9

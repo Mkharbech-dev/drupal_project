@@ -1,0 +1,19 @@
+<?php
+function formation_preprocess_page(&$variables) {
+  $variables["formation"]["salah_var"] = "Salah Eddine";
+
+}
+function formation_preprocess_node(&$variables) {
+  $variables["formation"]["salah_var"] = "Salah Eddine M'kharbech";
+
+}
+function formation_preprocess_input(&$variables) {
+  if ($variables["attributes"]["type"] == "text" ) {
+    $variables["attributes"]["class"][] = "test-salah";
+  }
+}
+
+function formation_preprocess_block(&$variables) {
+  $variables["formation"]["malak_var"] = "malak mkharbech";
+
+}

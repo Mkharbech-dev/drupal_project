@@ -1,0 +1,39 @@
+.search-block-form {
+  padding: 0;
+  position: relative;
+
+  input {
+    color: $pink;
+
+    &[type= 'search'] {
+      border: 0;
+      max-width: rem(230px);
+      padding: rem(15px 45px 15px 20px);
+      text-align: left;
+    }
+
+    &[type= 'submit'] {
+      background: transparent;
+      border: 0;
+      color: $pink;
+      height: rem(40px);
+      margin-left: rem(-40px);
+      min-width: auto;
+      padding: 0;
+      position: absolute;
+      transition: $transition;
+
+      &:hover {
+        color: $yellow;
+        transition: $transition;
+      }
+    }
+  }
+
+  form {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    width: auto;
+  }
+}

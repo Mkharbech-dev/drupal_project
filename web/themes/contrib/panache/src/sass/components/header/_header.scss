@@ -1,0 +1,33 @@
+.panache-header {
+  border-bottom: 1px solid $pink;
+  padding: rem(15px 0);
+
+  .row {
+    align-items: center;
+  }
+
+  .region {
+    margin-bottom: rem(10px);
+    text-align: center;
+  }
+
+  .region-header-left {
+    @include media-breakpoint-up(lg) {
+      margin: 0;
+      text-align: left;
+    }
+  }
+
+  .region-header-center {
+    @include media-breakpoint-up(lg) {
+      margin: 0;
+    }
+  }
+
+  .region-header-right {
+    @include media-breakpoint-up(lg) {
+      margin: 0;
+      text-align: right;
+    }
+  }
+}

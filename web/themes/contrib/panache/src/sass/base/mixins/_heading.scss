@@ -1,0 +1,66 @@
+@mixin panache-heading {
+  color: $pink ;
+  font-family: $raleway-semibold;
+  line-height: 1.6;
+  margin: 0;
+  padding: 10px 0;
+  text-transform: capitalize;
+}
+
+@mixin panache-heading1($color: $pink) {
+  @include panache-heading;
+  @include media-breakpoint-up('md') {
+    font-size: rem(40px);
+  }
+
+  color: $color;
+  font-size: rem(30px);
+}
+@mixin panache-heading2($color: $pink) {
+  @include panache-heading;
+  @include media-breakpoint-up('md') {
+    font-size: rem(30px);
+  }
+
+  color: $color;
+  font-size: rem(24px);
+}
+@mixin panache-heading3($color: $pink) {
+  @include panache-heading;
+  @include media-breakpoint-up('md') {
+    font-size: rem(24px);
+  }
+
+  color: $color;
+  font-size: rem(22px);
+}
+
+@mixin panache-heading4($color: $pink) {
+  @include panache-heading;
+  @include media-breakpoint-up('md') {
+    font-size: rem(22px);
+  }
+
+  color: $color;
+  font-size: rem(20px);
+}
+
+@mixin panache-heading5($color: $pink) {
+  @include panache-heading;
+  @include media-breakpoint-up('md') {
+    font-size: rem(20px);
+  }
+
+  color: $color;
+  font-size: rem(18px);
+}
+
+@mixin panache-heading6($color: $pink) {
+  @include panache-heading;
+  @include media-breakpoint-up('md') {
+    font-size: rem(18px);
+  }
+
+  color: $color;
+  font-size: rem(16px);
+}

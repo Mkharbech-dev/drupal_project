@@ -1,0 +1,23 @@
+name: Formation Theme
+type: theme
+base theme: panache
+description: 'théme pour la formation'
+package: "Mes themes"
+version: '1.0'
+core: 8.x
+core_version_requirement: ^8 || ^9
+libraries:
+  - formation/formation_lib
+
+regions:
+  header_left : 'Header left'
+  header_center: 'Header center'
+  header_right: 'Header right'
+  header_navigation: 'Header Navigation'
+  banner_slideshow: 'Banner Slideshow'
+  page_title: 'Page title'
+  content: 'Content'
+  left_sidebar: 'Left sidebar'
+  right_sidebar: 'Right sidebar'
+  footer: 'Footer'
+

@@ -1,0 +1,15 @@
+.region-left-sidebar,
+.region-right-sidebar {
+  background: $light-grey;
+  padding: rem(20px);
+
+  h2 {
+    color: $black;
+  }
+}
+
+.left-sidebar {
+  .row {
+    flex-wrap: wrap-reverse;
+  }
+}

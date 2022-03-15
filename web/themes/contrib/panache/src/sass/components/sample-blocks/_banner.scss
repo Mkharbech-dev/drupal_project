@@ -1,0 +1,52 @@
+.panache-banner-wrapper {
+  @include media-breakpoint-up('md') {
+    height: rem(350px);
+  }
+
+  @include media-breakpoint-up('lg') {
+    height: calc(100vh - 183px);
+    min-height: rem(400px);
+  }
+
+  height: rem(250px);
+  overflow: hidden;
+
+  &.slick-dotted.slick-slider {
+    margin-bottom: 0;
+  }
+
+  .slick-dots {
+    bottom: auto;
+    left: rem(20px);
+    text-align: left;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+
+    li {
+      background: none;
+      display: block;
+
+      button {
+        background: $white;
+      }
+    }
+  }
+}
+
+.panache-banner-item {
+  img {
+    @include media-breakpoint-up('md') {
+      height: rem(350px);
+    }
+
+    @include media-breakpoint-up('lg') {
+      height: calc(100vh - 183px);
+      min-height: rem(400px);
+    }
+
+    height: rem(250px);
+    object-fit: cover;
+    width: 100%;
+  }
+}

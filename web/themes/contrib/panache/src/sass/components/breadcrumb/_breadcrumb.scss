@@ -1,0 +1,10 @@
+.breadcrumb {
+  li {
+    margin-right: rem(20px);
+
+    &:before {
+      color: $black;
+      left: rem(-16px);
+    }
+  }
+}

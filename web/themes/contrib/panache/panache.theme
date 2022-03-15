@@ -1,0 +1,74 @@
+<?php
+
+/**
+ * @file
+ * The primary PHP file for the Drupal panache base theme.
+ *
+ * This file should only contain light helper functions and point to stubs in
+ * other files containing more complex functions.
+ *
+ * All [pre]process functions, theme functions and template files lives inside
+ * the `./templates` directory. This is a highly automated and complex system
+ * designed to only load the necessary files when a given theme hook is invoked.
+ */
+
+/**
+ * panache theme settings and preprocess functions.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Component\Utility\Xss;
+
+/**
+ * Implements hook_preprocess().
+ */
+function panache_preprocess(&$variables) {
+  $variables['panache'] = [];
+  $panache_settings = [
+    'display_sample_blocks',
+  ];
+
+  // Retrieve General
+  foreach ($panache_settings as $panache_setting) {
+    $value = trim(theme_get_setting($panache_setting, 'panache'));
+    if (!empty($value)) {
+      $variables['panache'][$panache_setting] = Xss::filter($value);
+    }
+  }
+
+}
+
+/**
+ * Theme settings for panache theme. Implements hook_form_FORM_ID_alter()
+ */
+function panache_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+
+  // Footer copyrights settings.
+  $form['panache_settings'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Panache Theme Settings'),
+    '#collapsible' => FALSE,
+    '#collapsed' => FALSE,
+  ];
+
+  $form['panache_settings']['tabs'] = [
+    '#type' => 'vertical_tabs',
+    '#default_tab' => 'general_tab',
+  ];
+
+  $form['panache_settings']['general_tab']['general_options'] = [
+    '#type' => 'details',
+    '#title' => t('Sample block Options'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#group' => 'tabs',
+  ];
+
+  $form['panache_settings']['general_tab']['general_options']['display_sample_blocks'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Show Sample Blocks'),
+    '#default_value' => theme_get_setting('display_sample_blocks', 'panache'),
+    '#description' => t('This enables the sample blocks, you can change the content and publish the site or use them to get a design idea.'),
+  ];
+
+}

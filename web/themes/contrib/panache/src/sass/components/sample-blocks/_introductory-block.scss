@@ -1,0 +1,26 @@
+.panache-introduction {
+  @include media-breakpoint-up('md') {
+    padding: rem(50px 0);
+  }
+  background: $pink;
+  margin-bottom: rem(50px);
+  padding: rem(35px 0);
+  color: $white;
+  h2 {
+    color: $white;
+  }
+
+  p {
+    line-height: 1.8;
+    color: $white;
+  }
+
+  .row {
+    align-items: center;
+  }
+
+  &-image {
+    margin: 0 auto;
+    max-width: 50%;
+  }
+}

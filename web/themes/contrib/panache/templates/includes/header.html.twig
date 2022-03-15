@@ -1,0 +1,94 @@
+{% if page.header_left and page.header_center and page.header_right %}
+  <div class="panache-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-lg-4">
+          {{ page.header_left }}
+        </div>
+        <div class="col-sm-12 col-lg-4">
+          {{ page.header_center }}
+        </div>
+        <div class="col-sm-12 col-lg-4">
+          {{ page.header_right }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% elseif page.header_left and page.header_center %}
+  <div class="panache-header  panache-header__left-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-4">
+          {{ page.header_left }}
+        </div>
+        <div class="col-md-12 col-lg-4">
+          {{ page.header_center }}
+        </div>
+        <div class="col-md-12 col-lg-4">
+          {{ page.header_right }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% elseif page.header_center and page.header_right %}
+
+  <div class="panache-header panache-header__center-right">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-4">
+          {{ page.header_left }}
+        </div>
+        <div class="col-md-12 col-lg-4">
+          {{ page.header_center }}
+        </div>
+        <div class="col-md-12 col-lg-4">
+          {{ page.header_right }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% elseif page.header_left and page.header_right %}
+  <div class="panache-header panache-header__left-right">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-6">
+          {{ page.header_center }}
+        </div>
+        <div class="col-md-12 col-lg-6">
+          {{ page.header_right }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% elseif page.header_left %}
+  <div class="panache-header panache-header__left">
+    <div class="container">
+      <div class="row">
+        <div class=" col-lg-12">
+          {{ page.header_left }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% elseif page.header_center %}
+  <div class="panache-header panache-header__center">
+    <div class="container">
+      <div class="row">
+        <div class=" col-lg-12">
+          {{ page.header_center }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% elseif page.header_right %}
+  <div class="panache-header panache-header__right">
+    <div class="container">
+      <div class="row">
+        <div class=" col-lg-12">
+          {{ page.header_right }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

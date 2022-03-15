@@ -1,0 +1,84 @@
+.panache-testimonial {
+  margin: rem(40px 0);
+
+  &-image {
+    @include media-breakpoint-up('md') {
+      height: rem(220px);
+      width: rem(220px);
+    }
+
+    border-radius: 50%;
+    height: rem(160px);
+    margin: 0 auto;
+    margin-bottom: rem(20px);
+    overflow: hidden;
+    width: rem(160px);
+  }
+
+  &-image-wrapper {
+    @include media-breakpoint-up('md') {
+      width: rem(220px);
+    }
+
+    margin: 0 auto;
+    position: relative;
+    width: rem(160px);
+
+    &:after {
+      background-color: $yellow;
+      border-radius: 50%;
+      bottom: 0;
+      color: $white;
+      content: '\f10d';
+      font-family: $fontawesome;
+      font-size: $text-extralarge;
+      font-weight: $bold;
+      height: 60px;
+      line-height: 60px;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      width: 60px;
+    }
+  }
+
+  &-author {
+    color: $black;
+    font-size: rem(38px);
+    letter-spacing: rem(1px);
+    line-height: 1;
+    text-align: center;
+    text-transform: capitalize;
+
+    span {
+      display: block;
+    }
+
+    .first-name {
+      color: $pink;
+      font-family: $raleway-bold;
+      font-size: $text-sm;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+  }
+
+  &-text {
+    @include media-breakpoint-up('lg') {
+      max-width: 60%;
+    }
+
+    margin: 0 auto;
+    text-align: center;
+    padding: rem(0 20px);
+
+    p {
+      @include media-breakpoint-up('lg') {
+        font-size: $text-extralarge;
+      }
+
+      font-size: $text-large;
+      font-style: italic;
+    }
+  }
+}

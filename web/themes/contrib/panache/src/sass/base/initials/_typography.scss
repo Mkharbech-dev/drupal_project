@@ -1,0 +1,116 @@
+/*! Font declaration
+=====================================*/
+@font-face {
+  font-family: 'RalewayRegular';
+  src: url('../../fonts/Raleway-Regular.eot');
+  src: url('../../fonts/Raleway-Regular.woff2') format('woff2'),
+    url('../../fonts/Raleway-Regular.woff') format('woff'),
+    url('../../fonts/Raleway-Regular.ttf') format('truetype'),
+    url('../../../fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RalewayBlack';
+  src: url('../../fonts/Raleway-Black.eot');
+  src: url('../../fonts/Raleway-Black.woff2') format('woff2'),
+    url('../../fonts/Raleway-Black.woff') format('woff'),
+    url('../../fonts/Raleway-Black.ttf') format('truetype'),
+    url('../../fonts/Raleway-Black.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RalewayBold';
+  src: url('../../fonts/Raleway-Bold.eot');
+  src: url('../../fonts/Raleway-Bold.woff2') format('woff2'),
+    url('../../fonts/Raleway-Bold.woff') format('woff'),
+    url('../../fonts/Raleway-Bold.ttf') format('truetype'),
+    url('../../fonts/Raleway-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RalewayExtraBold';
+  src: url('../../fonts/Raleway-ExtraBold.eot');
+  src: url('../../fonts/Raleway-ExtraBold.woff2') format('woff2'),
+    url('../../fonts/Raleway-ExtraBold.woff') format('woff'),
+    url('../../fonts/Raleway-ExtraBold.ttf') format('truetype'),
+    url('../../fonts/Raleway-ExtraBold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RalewayLight';
+  src: url('../../fonts/Raleway-Light.eot');
+  src: url('../../fonts/Raleway-Light.woff2') format('woff2'),
+    url('../../fonts/Raleway-Light.woff') format('woff'),
+    url('../../fonts/Raleway-Light.ttf') format('truetype'),
+    url('../../fonts/Raleway-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RalewayMedium';
+  src: url('../../fonts/Raleway-Medium.eot');
+  src: url('../../fonts/Raleway-Medium.woff2') format('woff2'),
+    url('../../fonts/Raleway-Medium.woff') format('woff'),
+    url('../../fonts/Raleway-Medium.ttf') format('truetype'),
+    url('../fonts/Raleway-Medium.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RalewaySemiBold';
+  src: url('../../fonts/Raleway-SemiBold.eot');
+  src: url('../../fonts/Raleway-SemiBold.woff2') format('woff2'),
+    url('../../fonts/Raleway-SemiBold.woff') format('woff'),
+    url('../../fonts/Raleway-SemiBold.ttf') format('truetype'),
+    url('../../fonts/Raleway-SemiBold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RalewayThin';
+  src: url('../../fonts/Raleway-Thin.eot');
+  src: url('../../fonts/Raleway-Thin.woff2') format('woff2'),
+    url('../../fonts/Raleway-Thin.woff') format('woff'),
+    url('../../fonts/Raleway-Thin.ttf') format('truetype'),
+    url('../../../fonts/Raleway-Thin.eot?#iefix') format('embedded-opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+$raleway: 'Raleway', sans-serif;
+$raleway-regular: 'RalewayRegular', sans-serif;
+$raleway-thin: 'RalewayThin', sans-serif;
+$raleway-medium: 'RalewayMedium', sans-serif;
+$raleway-light: 'RalewayLight', sans-serif;
+$raleway-semibold: 'RalewaySemiBold', sans-serif;
+$raleway-bold: 'RalewayBold', sans-serif;
+$raleway-extrabold: 'RalewayExtraBold', sans-serif;
+$raleway-boldest: 'RalewayBlack', sans-serif;
+$fontawesome: 'Font Awesome 5 Free';
+
+//Font weight variables
+$thin: 100;
+$light: 300;
+$normal: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$extrabold: 800;
+$boldest-font: 900;
+
+//Font size variables
+$text-sm: rem(14px);
+$text-medium: rem(16px);
+$text-large: rem(18px);
+$text-extralarge: rem(20px)

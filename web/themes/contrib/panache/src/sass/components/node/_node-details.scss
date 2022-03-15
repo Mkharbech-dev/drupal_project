@@ -1,0 +1,138 @@
+.node__submitted {
+  display: inline-block;
+}
+
+.node__meta {
+
+  @include media-breakpoint-up('sm') {
+    flex-wrap: nowrap;
+    text-align: right;
+  }
+
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+
+  &-author,
+  &-date {
+    display: inline-block;
+    padding: 10px;
+    text-transform: capitalize;
+  }
+
+  &-date {
+    background: $black;
+    border-left: 5px solid $pink;
+    color: $white;
+  }
+
+  &-author {
+    color: $pink;
+    font-family: $raleway-semibold;
+    max-width: rem(200px);
+    text-align: center;
+
+    a {
+      line-height: 1.2;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.node__content {
+  .field--type-image {
+    @include media-breakpoint-up('sm') {
+      float: left;
+      margin: rem(0 20px 20px 0);
+    }
+
+    @include media-breakpoint-up('lg') {
+      max-width: rem(400px);
+    }
+
+    line-height: 1;
+    margin: rem(20px auto 0 auto);
+    max-width: rem(220px);
+
+    img {
+      display: block;
+    }
+  }
+
+  .field--name-user-picture {
+    margin: 0;
+  }
+
+  p {
+    text-align: justify;
+
+    img {
+
+      @include media-breakpoint-up('sm') {
+        float: left;
+        margin: rem(20px 20px 20px 0);
+      }
+
+      @include media-breakpoint-up('lg') {
+        max-width: rem(400px);
+      }
+
+      display: block;
+      float: none;
+      line-height: 1;
+      margin: 20px auto;
+      max-width: rem(220px);
+    }
+  }
+
+  figure {
+    @include media-breakpoint-up('sm') {
+      float: left;
+      margin: rem(20px 20px 20px 0);
+    }
+    @include media-breakpoint-up('lg') {
+      max-width: rem(400px);
+    }
+    display: block;
+    float: none;
+    line-height: 1;
+    margin: 20px auto;
+    max-width: rem(220px);
+  }
+
+  .align-right {
+    @include media-breakpoint-up('sm') {
+      float: right;
+      margin: rem(20px 20px 20px 0);
+    }
+  }
+
+  .align-center {
+    @include media-breakpoint-up('sm') {
+      display: block;
+      float: none;
+      margin: 20px auto;
+    }
+  }
+}
+
+ul {
+
+  &.links {
+    display: inline-block;
+
+    li {
+      background: none;
+    }
+
+    &.inline {
+      display: inline-block;
+
+    }
+  }
+}

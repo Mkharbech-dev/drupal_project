@@ -1,0 +1,23 @@
+@mixin panache-button($background: $pink) {
+  background: $background;
+  border-radius: rem(25px);
+  color: $white;
+  font-family: $raleway-semibold;
+  padding: rem(10px 20px);
+  text-align: center;
+  text-transform: uppercase;
+  transition: $transition;
+
+  @if $background == $pink {
+    &:hover {
+      background: $yellow;
+    }
+  }
+
+  @if $background == $yellow {
+
+    &:hover {
+      background: $pink;
+    }
+  }
+}

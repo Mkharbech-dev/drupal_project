@@ -1,0 +1,275 @@
+.panache-header-menu {
+
+  nav {
+
+    @include media-breakpoint-up(lg) {
+      padding: 0;
+    }
+
+    @include media-breakpoint-down(md) {
+      background: $black;
+      display: none;
+      height: 100vh;
+      left: 0;
+      overflow-y: scroll;
+      padding-top: rem(22px);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+
+  .menu {
+    margin-top: rem(30px);
+    padding: rem(10px);
+  }
+
+  .menu-level0 {
+
+    padding: 0;
+
+    > .menu-item {
+      @include media-breakpoint-down(md) {
+        border-bottom: 1px solid $dark-grey;
+      }
+
+      > a {
+        padding: rem(20px 15px);
+
+        @include media-breakpoint-down(md) {
+          padding: rem(16px 15px);
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  .menu-item {
+    padding-top: 0;
+    position: relative;
+    white-space: nowrap;
+
+    a {
+      @include media-breakpoint-down(md) {
+        color: $white;
+        font-weight: normal;
+        padding: rem(15px);
+        text-transform: uppercase;
+        white-space: normal;
+      }
+    }
+
+    .is-active {
+      color: $white;
+    }
+
+    &--expanded {
+      list-style: none;
+      position: relative;
+      
+      ul.menu {
+        @include media-breakpoint-down(md) {
+          display: none;
+          margin-left: rem(20px);
+          margin-top: 0;
+          padding-top: 0;
+        }
+      }
+
+      .menu-item {
+
+        a {
+
+          @include media-breakpoint-down(md) {
+            color: $white;
+            font-family: $raleway-regular;
+            padding: rem(8px);
+            text-transform: none;
+            position: relative;
+            width: 90%;
+
+            &:before {
+              content: '-';
+              left: -10px;
+              position: absolute;
+            }
+          }
+        }
+
+        .is-active {
+
+          @include media-breakpoint-down(md) {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+
+    @include create-container();
+
+    ul.menu {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .menu-level2 {
+      left: calc(100% + 10px);
+      top: 0;
+    }
+
+    .menu-level1 {
+      
+      .menu-item--expanded {
+        > a {
+          &:after {
+            content: "\f105";
+          }
+        }
+      }
+    }
+
+    .menu-item {
+      padding: 0;
+      position: relative;
+      transition: $transition;
+
+      a {
+        color: $black;
+        font-family: $raleway-bold;
+        font-size: $text-sm;
+        font-weight: $bold;
+        letter-spacing: .2em;
+        padding: rem(10px 15px);
+        text-transform: uppercase;
+        transition: $transition;
+
+        &:hover {
+          color: #fab915;
+          transition: $transition;
+        }
+      }
+
+      .is-active {
+        color: $pink;
+      }
+
+      &--expanded {
+        height: 100%;
+        list-style: none;
+        position: relative;
+        z-index: 1;
+  
+        ul.menu {
+          background-color: $white;
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+          display: none;
+          position: absolute;
+        }
+
+        > a {
+
+          &:after {
+            content: "\f107";
+            font-family: $fontawesome;
+            position: absolute;
+            right: 0;
+          }
+        }
+      }
+    }
+
+    .menu-accordion-icon {
+      display: none;
+    }
+  }
+
+  .menu-accordion-icon {
+    color: $white;
+    font-family: $raleway-semibold;
+    font-size: rem(20px);
+    line-height: 1;
+    position: absolute;
+    right: 20px;
+    top: rem(16px);
+    transition: $transition;
+  }
+
+  .navbar-toggle {
+    background: $white;
+    cursor: pointer;
+    height: rem(50px);
+    padding: rem(10px);
+    position: fixed;
+    right: 0;
+    top: rem(20px);
+    width: rem(50px);
+    z-index: 99;
+
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    background-color: $black;
+    height: rem(2px);
+    margin: 6px auto;
+    transition: $transition;
+    width: rem(30px);
+  }
+
+  .navbar-on {
+    background: $black;
+
+    .bar1,
+    .bar2,
+    .bar3 {
+      background-color: $white;
+    }
+
+    .bar1 {
+      transform: rotate(45deg);
+      transform-origin: 10% 40%;
+    }
+
+    .bar3 {
+      transform: rotate(-45deg);
+      transform-origin: 10% 40%;
+    }
+
+    .bar2 {
+      background-color: transparent;
+    }
+  }
+
+  .accordion-open {
+    transform: rotate(180deg);
+    transition: $transition;
+  }
+
+  ul {
+
+    li {
+      background: none;
+    }
+  }
+}
+.user-logged-in {
+  .panache-header-menu {
+    .navbar-toggle {
+      top: rem(36px);
+    }
+    nav {
+      @include media-breakpoint-down(md) {
+        padding-top: rem(42px);
+      }
+    }
+  }
+}
