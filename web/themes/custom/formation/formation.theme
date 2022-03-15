@@ -13,7 +13,4 @@ function formation_preprocess_input(&$variables) {
   }
 }
 
-function formation_preprocess_block(&$variables) {
-  $variables["formation"]["malak_var"] = "malak mkharbech";
 
-}
