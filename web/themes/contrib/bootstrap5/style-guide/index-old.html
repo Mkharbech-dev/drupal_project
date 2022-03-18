@@ -1,0 +1,2943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bootstrap 5 style guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <link rel="stylesheet" href="../css/style.css" media="screen">
+  <style>
+      .navbar-brand img {
+          height: 24px;
+      }
+
+      /* styles just for style guide */
+      .bs-component .modal {
+          /* show modal window as a container on a styleguide page */
+          position: relative;
+          top: auto;
+          right: auto;
+          left: auto;
+          bottom: auto;
+          z-index: 1;
+          display: block;
+      }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="bs-docs-section">
+    <div class="container-fluid bg-primary">
+      <h1 class="text-white">Fluid container</h1>
+    </div>
+  </div>
+
+  <div class="bs-docs-section">
+    <div class="container bg-primary">
+      <h1 class="text-white">Fixed container</h1>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <div class="page-header" id="banner">
+      <div class="row">
+        <div class="col-12">
+          <h1>Bootstrap 5 style guide</h1>
+          <p>
+            1. Read about <a href="https://getbootstrap.com/docs/5.1/customize/sass/#variable-defaults">Bootstrap
+            theming</a>
+            <br/>
+            2. Customize your theme by defining variables in <strong>/themes/custom/your-theme/scss/overrides/_variables.scss</strong>.
+            <br/>
+            For example:
+          <pre>
+            <code>
+              $font-family-base: roboto-thin,roboto,sans-serif;
+              $font-weight-normal: 300;
+              $body-color: rgb(40, 40, 40);
+              $enable-rounded: false;
+              $enable-validation-icons: false; // true by default
+            </code>
+          </pre>
+          </p>
+          <p>
+            This reference guide includes commonly used elements:
+          <ul>
+            <li><a href="#navbars">Navbar</a></li>
+            <li><a href="#utilities">Utilities</a></li>
+            <li><a href="#buttons">Buttons</a></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#images">Images</a></li>
+            <li><a href="#Collapse">Collapse</a></li>
+            <li><a href="#tables">Tables</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#navs">Navs (tabs, pills, breadcrumbs, pagination)</a></li>
+            <li><a href="#indicators">Indicators (alerts, badges)</a></li>
+            <li><a href="#progress">Spinners and progress</a></li>
+            <li><a href="#containers">Containers (jumbotron, cards, list groups & etc)</a></li>
+            <li><a href="#dialogs">Dialogs, popovers and tooltips</a></li>
+          </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="bs-docs-section clearfix">
+      <div class="row">
+        <div class="col-lg-12 my-5">
+          <div class="page-header">
+            <h1 id="navbars">Navbars</h1>
+
+            <div class="bs-component mb-4">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <img src="bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    Navbar Light
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#navbarTextLight" aria-controls="navbarTextLight" aria-expanded="false"
+                          aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarTextLight">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown link
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarLightDropdownMenuLink">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <span class="navbar-text mx-2">
+                          Inline element
+                        </span>
+                  </div>
+                </div>
+              </nav>
+            </div>
+
+            <div class="bs-component mb-4">
+              <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <img src="bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    Navbar Dark
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#navbarTextDark"
+                          aria-controls="navbarTextDark" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarTextDark">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown link
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                    <span class="navbar-text mx-2">
+                            Inline element
+                          </span>
+                  </div>
+                </div>
+              </nav>
+            </div>
+
+            <div class="bs-component mb-4">
+              <nav class="navbar navbar-expand-xl navbar-dark bg-primary">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <img src="bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    Navbar Primary
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#navbarTextPrimary" aria-controls="navbarTextPrimary" aria-expanded="false"
+                          aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarTextPrimary">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown link
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                    <span class="navbar-text mx-2">
+                            Inline element
+                          </span>
+                  </div>
+                </div>
+              </nav>
+            </div>
+
+            <div class="bs-component mb-4">
+              <nav class="navbar navbar-expand-xl navbar-light" style="background-color: #e3f2fd;">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <img src="bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    Navbar Primary
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#navbarTextLightCustom" aria-controls="navbarTextLightCustom"
+                          aria-expanded="false"
+                          aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarTextLightCustom">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkLightCustom"
+                           role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown link
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkLightCustom">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                    <span class="navbar-text d-lg-none mx-2">
+                            Inline element
+                          </span>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Utilities === -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 id="utilities">Utilities</h2>
+        <h3>Modifiers</h3>
+        <p><strong>{ xs | sm | md | lg | xl }</strong> - available sizes for classes, example <code>.d-sm-none</code> -
+          hide on mobile and smaller </p>
+        <p><strong>{ x | y | t | b | l | r}</strong> - available positions x - horizontal, y - vertical, t - top, b -
+          bottom etc, example <code>.mx-0</code> - remove margin horizonally only </p>
+        <h3>Useful classes</h3>
+
+        <p><strong>.d-none or .d-{xs|sm|md|lg|xl}-none</strong> - hide element</p>
+        <p><strong>.sr-only</strong> - hide element, but make available for screen reader only</p>
+        <p><strong>.text-left | .text-center | .text-right </strong> - text alignment</p>
+        <p><strong>.m{x|y|t|b|l|r}-{xs|sm|md|lg|xl}-{0-5}</strong> - apply margin, eg <code>.m-0</code> - no margin for
+          all sizes, <code>.my-md-2</code> - vertical margin for tablet+ of .5 $spacer</p>
+        <p><strong>.p{x|y|t|b|l|r}-{xs|sm|md|lg|xl}-{0-5}</strong> - apply padding, eg <code>.m-0</code> - no padding
+          for all sizes, <code>.px-md-2</code> - horizontal padding for tablet+ of .5 $spacer</p>
+        <p><strong>.row-g-0</strong> - no margins on row element</p>
+
+        <a href="https://getbootstrap.com/docs/4.0/utilities/borders/"> more info</a>
+      </div>
+    </div>
+
+    <!-- Buttons === -->
+    <div class="bs-docs-section">
+      <div class="page-header">
+        <div class="row">
+          <div class="col-lg-12 my-5">
+            <h1 id="buttons">Buttons</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-7">
+
+          <p class="bs-component mb-2">
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-info">Info</button>
+            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-dark">Dark</button>
+            <button type="button" class="btn btn-link">Link</button>
+          </p>
+
+          <p class="bs-component mb-2">
+            <button type="button" class="btn btn-primary disabled" aria-disabled="true">Primary</button>
+            <button type="button" class="btn btn-secondary disabled" aria-disabled="true">Secondary</button>
+            <button type="button" class="btn btn-success disabled" aria-disabled="true">Success</button>
+            <button type="button" class="btn btn-danger disabled" aria-disabled="true">Danger</button>
+            <button type="button" class="btn btn-warning disabled" aria-disabled="true">Warning</button>
+            <button type="button" class="btn btn-info disabled" aria-disabled="true">Info</button>
+            <button type="button" class="btn btn-light disabled" aria-disabled="true">Light</button>
+            <button type="button" class="btn btn-dark disabled" aria-disabled="true">Dark</button>
+            <button type="button" class="btn btn-link disabled" aria-disabled="true">Link</button>
+          </p>
+
+          <p class="bs-component mb-2">
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+            <button type="button" class="btn btn-outline-secondary">Secondary</button>
+            <button type="button" class="btn btn-outline-success">Success</button>
+            <button type="button" class="btn btn-outline-danger">Danger</button>
+            <button type="button" class="btn btn-outline-warning">Warning</button>
+            <button type="button" class="btn btn-outline-info">Info</button>
+            <button type="button" class="btn btn-outline-light">Light</button>
+            <button type="button" class="btn btn-outline-dark">Dark</button>
+          </p>
+
+          <div class="bs-component mb-2">
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                Primary
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                Secondary
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                Success
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                Info
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                Warning
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                Action
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="bs-component mb-2">
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                Primary
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                Secondary
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                Success
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-info dropdown-toggle" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                Info
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                Warning
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                Action
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="bs-component mb-2">
+            <button type="button" class="btn btn-primary btn-lg">Large button</button>
+            <button type="button" class="btn btn-primary">Default button</button>
+            <button type="button" class="btn btn-primary btn-sm">Small button</button>
+          </div>
+
+          <div class="bs-component mb-2">
+            <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+            <button type="button" class="btn btn-secondary">Default button</button>
+            <button type="button" class="btn btn-secondary btn-sm">Small button</button>
+          </div>
+
+          <div class="bs-component mb-2">
+            <button type="button" class="btn btn-primary btn-lg" disabled>Disabled button</button>
+            <button type="button" class="btn btn-primary" disabled>Disabled button</button>
+            <button type="button" class="btn btn-primary btn-sm" disabled>Disabled button</button>
+          </div>
+
+          <div class="bs-component mb-2">
+            <button type="button" class="btn btn-secondary btn-lg" disabled>Disabled button</button>
+            <button type="button" class="btn btn-secondary" disabled>Disabled button</button>
+            <button type="button" class="btn btn-secondary btn-sm" disabled>Disabled button</button>
+          </div>
+
+          <div class="bs-component mb-2">
+            <a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Disabled
+              link</a>
+            <a href="#" class="btn btn-primary disabled" tabindex="-1" role="button" aria-disabled="true">Disabled
+              link</a>
+            <a href="#" class="btn btn-primary btn-sm disabled" tabindex="-1" role="button" aria-disabled="true">Disabled
+              link</a>
+          </div>
+
+          <div class="bs-component mb-2">
+            <a href="#" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Disabled
+              Link</a>
+            <a href="#" class="btn btn-secondary disabled" tabindex="-1" role="button" aria-disabled="true">Disabled
+              Link</a>
+            <a href="#" class="btn btn-secondary btn-sm disabled" tabindex="-1" role="button" aria-disabled="true">Disabled
+              Link</a>
+          </div>
+
+
+          <h2>Block buttons</h2>
+          <p class="bs-component">
+          <div class="d-grid gap-2 mb-4">
+            <button class="btn btn-primary" type="button">Button</button>
+            <button class="btn btn-primary" type="button">Button</button>
+          </div>
+
+          <div class="d-grid gap-2 d-md-block mb-4">
+            <button class="btn btn-primary" type="button">Button</button>
+            <button class="btn btn-primary" type="button">Button</button>
+          </div>
+
+          <div class="d-grid gap-2 col-6 mx-auto mb-4">
+            <button class="btn btn-primary" type="button">Button</button>
+            <button class="btn btn-primary" type="button">Button</button>
+          </div>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4">
+            <button class="btn btn-primary me-md-2" type="button">Button</button>
+            <button class="btn btn-primary" type="button">Button</button>
+          </div>
+          </p>
+
+        </div>
+        <div class="col-lg-5">
+
+          <h2>Button group - horizontal</h2>
+
+          <div class="bs-component mb-4">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-primary">Left</button>
+              <button type="button" class="btn btn-primary">Middle</button>
+              <button type="button" class="btn btn-primary">Right</button>
+            </div>
+
+            <div class="btn-group">
+              <a href="#" class="btn btn-primary active" aria-current="page">Active link</a>
+              <a href="#" class="btn btn-primary">Link</a>
+              <a href="#" class="btn btn-primary">Link</a>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+              <button type="button" class="btn btn-danger">Left</button>
+              <button type="button" class="btn btn-warning">Middle</button>
+              <button type="button" class="btn btn-success">Right</button>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+              <button type="button" class="btn btn-outline-primary">Left</button>
+              <button type="button" class="btn btn-outline-primary">Middle</button>
+              <button type="button" class="btn btn-outline-primary">Right</button>
+            </div>
+          </div>
+
+          <h2>Button group - checkbox</h2>
+          <div class="bs-component mb-4">
+            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+              <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
+
+              <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btncheck2">Checkbox 2</label>
+
+              <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
+            </div>
+          </div>
+
+          <h2>Button group - radio</h2>
+          <div class="bs-component" style="margin-bottom: 15px;">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+              <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
+
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
+
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
+            </div>
+          </div>
+
+          <h2>Button group - vertical</h2>
+
+          <div class="bs-component mb-4">
+            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+              <button type="button" class="btn btn-dark">Button</button>
+              <button type="button" class="btn btn-dark">Button</button>
+              <button type="button" class="btn btn-dark">Button</button>
+            </div>
+          </div>
+
+          <div class="bs-component mb-4">
+            <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-primary">1</button>
+              <button type="button" class="btn btn-primary">2</button>
+
+              <div class="btn-group" role="group">
+                <button id="btnGroupDropVert1" type="button" class="btn btn-primary dropdown-toggle"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnGroupDropVert1">
+                  <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                  <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bs-component mb-4">
+            <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+              <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked="">
+              <label class="btn btn-outline-danger" for="vbtn-radio1">Radio 1</label>
+              <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+              <label class="btn btn-outline-danger" for="vbtn-radio2">Radio 2</label>
+              <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+              <label class="btn btn-outline-danger" for="vbtn-radio3">Radio 3</label>
+            </div>
+          </div>
+
+          <h2>Button toolbar</h2>
+          <div class="bs-component mb-4">
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group me-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-primary">1</button>
+                <button type="button" class="btn btn-primary">2</button>
+                <button type="button" class="btn btn-primary">3</button>
+                <button type="button" class="btn btn-primary">4</button>
+              </div>
+              <div class="btn-group me-2" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-secondary">5</button>
+                <button type="button" class="btn btn-secondary">6</button>
+                <button type="button" class="btn btn-secondary">7</button>
+              </div>
+              <div class="btn-group" role="group" aria-label="Third group">
+                <button type="button" class="btn btn-info">8</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Typography
+    ================================================== -->
+    <div class="bs-docs-section">
+      <div class="row">
+        <div class="col-lg-12 my-5">
+          <div class="page-header">
+            <h1 id="typography">Typography</h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Headings -->
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="bs-component mb-4">
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+            <h3>
+              Heading
+              <small class="text-muted">with muted text</small>
+            </h3>
+            <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+          </div>
+
+          <div class="bs-component mb-4">
+            <h1 class="display-1">Display 1</h1>
+            <h1 class="display-2">Display 2</h1>
+            <h1 class="display-3">Display 3</h1>
+            <h1 class="display-4">Display 4</h1>
+            <h1 class="display-5">Display 5</h1>
+            <h1 class="display-6">Display 6</h1>
+          </div>
+
+          <h2>Lead</h2>
+          <div class="bs-component mb-4">
+            <p class="lead">
+              This is a lead paragraph. It stands out from regular paragraphs.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+
+          <h2>Inline text elements</h2>
+          <div class="bs-component mb-4">
+            <p>You can use the mark tag to
+              <mark>highlight</mark>
+              text.
+            </p>
+            <p>
+              <del>This line of text is meant to be treated as deleted text.</del>
+            </p>
+            <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+            <p>
+              <ins>This line of text is meant to be treated as an addition to the document.</ins>
+            </p>
+            <p><u>This line of text will render as underlined.</u></p>
+            <p><small>This line of text is meant to be treated as fine print.</small></p>
+            <p><strong>This line rendered as bold text.</strong></p>
+            <p><em>This line rendered as italicized text.</em></p>
+          </div>
+
+          <h3>Unstyled list</h3>
+
+          <div class="bs-component mb-4">
+            <ul class="list-unstyled">
+              <li>This is a list.</li>
+              <li>It appears completely unstyled.</li>
+              <li>Structurally, it's still a list.</li>
+              <li>However, this style only applies to immediate child elements.</li>
+              <li>Nested lists:
+                <ul>
+                  <li>are unaffected by this style</li>
+                  <li>will still show a bullet</li>
+                  <li>and have appropriate left margin</li>
+                </ul>
+              </li>
+              <li>This may still come in handy in some situations.</li>
+            </ul>
+          </div>
+
+          <h3>Inline list</h3>
+          <div class="bs-component mb-4">
+            <ul class="list-inline">
+              <li class="list-inline-item">This is a list item.</li>
+              <li class="list-inline-item">And another one.</li>
+              <li class="list-inline-item">But they're displayed inline.</li>
+            </ul>
+          </div>
+
+          <h3>Inline code</h3>
+          <div class="bs-component mb-4">
+            For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+          </div>
+
+          <h4>Code block</h4>
+          <div class="bs-component mb-4">
+          <pre><code>&lt;p&gt;Sample text here...&lt;/p&gt;
+&lt;p&gt;And another line of sample text here...&lt;/p&gt;
+</code></pre>
+          </div>
+
+          <h4>Variables</h4>
+          <div class="bs-component mb-4">
+          <var>y</var> = <var>m</var><var>x</var> + <var>b</var>
+          </div>
+
+          <h4>User input</h4>
+          <div class="bs-component mb-4">
+            To switch directories, type <kbd>cd</kbd> followed by the name of the directory.<br>
+            To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd>
+          </div>
+
+          <h4>Sample</h4>
+          <div class="bs-component mb-4">
+            <samp>This text is meant to be treated as sample output from a computer program.</samp>
+          </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+          <h2>Text transform</h2>
+
+          <div class="bs-component">
+            <p class="text-lowercase">Lowercased text.</p>
+            <p class="text-uppercase">Uppercased text.</p>
+            <p class="text-capitalize">CapiTaliZed text.</p>
+          </div>
+
+          <h2>Font size</h2>
+
+          <div class="bs-component">
+            <p class="fs-1">.fs-1 text</p>
+            <p class="fs-2">.fs-2 text</p>
+            <p class="fs-3">.fs-3 text</p>
+            <p class="fs-4">.fs-4 text</p>
+            <p class="fs-5">.fs-5 text</p>
+            <p class="fs-6">.fs-6 text</p>
+          </div>
+
+          <h2>Font weight and italics</h2>
+
+          <div class="bs-component">
+            <p class="fw-bold">Bold text.</p>
+            <p class="fw-bolder">Bolder weight text (relative to the parent element).</p>
+            <p class="fw-normal">Normal weight text.</p>
+            <p class="fw-light">Light weight text.</p>
+            <p class="fw-lighter">Lighter weight text (relative to the parent element).</p>
+            <p class="fst-italic">Italic text.</p>
+            <p class="fst-normal">Text with normal font style</p>
+          </div>
+
+          <h2>Emphasis classes</h2>
+
+          <div class="bs-component">
+            <p class="text-primary">.text-primary</p>
+            <p class="text-secondary">.text-secondary</p>
+            <p class="text-success">.text-success</p>
+            <p class="text-danger">.text-danger</p>
+            <p class="text-warning bg-dark">.text-warning</p>
+            <p class="text-info bg-dark">.text-info</p>
+            <p class="text-light bg-dark">.text-light</p>
+            <p class="text-dark">.text-dark</p>
+            <p class="text-body">.text-body</p>
+            <p class="text-muted">.text-muted</p>
+            <p class="text-white bg-dark">.text-white</p>
+            <p class="text-black-50">.text-black-50</p>
+            <p class="text-white-50 bg-dark">.text-white-50</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Blockquotes -->
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 id="type-blockquotes">Blockquotes</h2>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-lg-6">
+          <div class="bs-component">
+            <blockquote class="blockquote">
+              <p>A well-known quote, contained in a blockquote element.</p>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="bs-component">
+            <figure>
+              <blockquote class="blockquote">
+                <p>A well-known quote, contained in a blockquote element.</p>
+              </blockquote>
+              <figcaption class="blockquote-footer">
+                Someone famous in <cite title="Source Title">Source Title</cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="bs-component">
+            <figure class="text-center">
+              <blockquote class="blockquote">
+                <p>A well-known quote, contained in a blockquote element.</p>
+              </blockquote>
+              <figcaption class="blockquote-footer">
+                Someone famous in <cite title="Source Title">Source Title</cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="bs-component">
+            <figure class="text-end">
+              <blockquote class="blockquote">
+                <p>A well-known quote, contained in a blockquote element.</p>
+              </blockquote>
+              <figcaption class="blockquote-footer">
+                Someone famous in <cite title="Source Title">Source Title</cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Images
+    ================================================== -->
+    <div class="bs-docs-section">
+      <div class="row">
+        <div class="col-lg-12 my-5">
+          <div class="page-header">
+            <h1 id="images">Images</h1>
+          </div>
+
+          <h2>Responsive images</h2>
+          <div class="bs-component">
+            <img
+                src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%221003%22%20height%3D%22250%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201003%20250%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16986e5da70%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A50pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16986e5da70%22%3E%3Crect%20width%3D%221003%22%20height%3D%22250%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22355.0703125%22%20y%3D%22148.1%22%3E1003x250%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                class="img-fluid" alt="Responsive image">
+          </div>
+
+          <h2>Thumbnail</h2>
+          <div class="bs-component">
+            <img
+                src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16986e2d2ab%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16986e2d2ab%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2274.4296875%22%20y%3D%22104.65%22%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                alt="..." class="img-thumbnail">
+          </div>
+
+          <h2>Aligning images</h2>
+          <div class="bs-component">
+            <div class="bd-example">
+              <svg class="bd-placeholder-img rounded float-start" width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 200x200" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">200x200</text></svg>
+
+              <svg class="bd-placeholder-img rounded float-end" width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 200x200" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">200x200</text></svg>
+
+            </div>
+            <div class="clearfix">...</div>
+          </div>
+
+          <h2>Figure</h2>
+          <div class="bs-component">
+            <figure class="figure">
+              <img
+                  src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22400%22%20height%3D%22300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16986eb6059%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A20pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16986eb6059%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22148.8515625%22%20y%3D%22159.15%22%3E400x300%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                  class="figure-img img-fluid rounded"
+                  alt="A generic square placeholder image with rounded corners in a figure.">
+              <figcaption class="figure-caption">A caption for the above image.</figcaption>
+            </figure>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapse
+    ================================================== -->
+    <div class="bs-docs-section">
+      <div class="row">
+        <div class="col-lg-12 my-5">
+
+          <div class="page-header">
+            <h1 id="Collapse">Collapse</h1>
+          </div>
+
+          <h2>Collapse</h2>
+          <div class="bs-component mb-4">
+            <p>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Link with href
+              </a>
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Button with data-bs-target
+              </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+              </div>
+            </div>
+          </div>
+
+          <h2>Accordion</h2>
+          <div class="bs-component mb-4">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Accordion Item #1
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Accordion Item #2
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Accordion Item #3
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tables
+    ================================================== -->
+    <div class="bs-docs-section">
+      <div class="row">
+        <div class="col-lg-12 my-5">
+
+          <div class="page-header">
+            <h1 id="tables">Tables</h1>
+          </div>
+
+          <div class="bs-component">
+            <table class="table">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Table - variants</h2>
+          <div class="bs-component">
+            <table class="table">
+              <thead>
+              <tr>
+                <th scope="col">Class</th>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">Default</th>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+
+              <tr class="table-primary">
+                <th scope="row">Primary</th>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="row">Secondary</th>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+              <tr class="table-success">
+                <th scope="row">Success</th>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+              <tr class="table-danger">
+                <th scope="row">Danger</th>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+              <tr class="table-warning">
+                <th scope="row">Warning</th>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+              <tr class="table-info">
+                <th scope="row">Info</th>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+              <tr class="table-light">
+                <th scope="row">Light</th>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+              <tr class="table-dark">
+                <th scope="row">Dark</th>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Accented tables</h2>
+
+          <h3>Striped rows</h3>
+          <div class="bs-component">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+              </tbody>
+
+            </table>
+          </div>
+
+          <div class="bs-component">
+            <table class="table table-dark table-striped">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+              </tbody>
+
+            </table>
+          </div>
+
+          <div class="bs-component">
+            <table class="table table-success table-striped">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+              </tbody>
+
+            </table>
+          </div>
+
+          <h3>Hoverable rows</h3>
+          <div class="bs-component">
+            <table class="table table-striped table-hover">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+              </tbody>
+
+            </table>
+          </div>
+
+          <div class="bs-component">
+            <table class="table table-dark table-hover">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+              </tbody>
+
+            </table>
+          </div>
+
+          <h3>Active tables</h3>
+          <div class="bs-component">
+            <table class="table">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr class="table-active">
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2" class="table-active">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="bs-component">
+            <table class="table table-dark">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr class="table-active">
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2" class="table-active">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Forms
+    ================================================== -->
+    <div class="bs-docs-section">
+
+      <div class="row">
+        <div class="col-lg-12 my-5">
+          <div class="page-header">
+            <h1 id="forms">Forms</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="bs-component">
+            <form class="row g-3">
+              <div class="col-auto">
+                <label for="staticEmail2" class="visually-hidden">Email</label>
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+              </div>
+              <div class="col-auto">
+                <label for="inputPassword2" class="visually-hidden">Password</label>
+                <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+              </div>
+
+            </form>
+          </div>
+
+          <div class="bs-component">
+            <form class="needs-validation" novalidate="">
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">First name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                  <div class="invalid-feedback">
+                    Valid first name is required.
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">Last name</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="username" class="form-label">Username</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" id="username" placeholder="Username" required="">
+                    <div class="invalid-feedback">
+                      Your username is required.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+                  <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                  <div class="invalid-feedback">
+                    Please enter a valid email address for shipping updates.
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="address" class="form-label">Address</label>
+                  <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                  <div class="invalid-feedback">
+                    Please enter your shipping address.
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+                  <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                </div>
+
+                <div class="col-md-5">
+                  <label for="country" class="form-label">Country</label>
+                  <select class="form-select" id="country" required="">
+                    <option value="">Choose...</option>
+                    <option>United States</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid country.
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="state" class="form-label">State</label>
+                  <select class="form-select" id="state" required="">
+                    <option value="">Choose...</option>
+                    <option>California</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please provide a valid state.
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <label for="zip" class="form-label">Zip</label>
+                  <input type="text" class="form-control" id="zip" placeholder="" required="">
+                  <div class="invalid-feedback">
+                    Zip code required.
+                  </div>
+                </div>
+              </div>
+
+              <hr class="my-4">
+
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="same-address">
+                <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="save-info">
+                <label class="form-check-label" for="save-info">Save this information for next time</label>
+              </div>
+
+              <hr class="my-4">
+
+              <h4 class="mb-3">Payment</h4>
+
+              <div class="my-3">
+                <div class="form-check">
+                  <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+                  <label class="form-check-label" for="credit">Credit card</label>
+                </div>
+                <div class="form-check">
+                  <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
+                  <label class="form-check-label" for="debit">Debit card</label>
+                </div>
+                <div class="form-check">
+                  <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
+                  <label class="form-check-label" for="paypal">PayPal</label>
+                </div>
+              </div>
+
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <label for="cc-name" class="form-label">Name on card</label>
+                  <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                  <small class="text-muted">Full name as displayed on card</small>
+                  <div class="invalid-feedback">
+                    Name on card is required
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="cc-number" class="form-label">Credit card number</label>
+                  <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                  <div class="invalid-feedback">
+                    Credit card number is required
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <label for="cc-expiration" class="form-label">Expiration</label>
+                  <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                  <div class="invalid-feedback">
+                    Expiration date required
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <label for="cc-cvv" class="form-label">CVV</label>
+                  <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                  <div class="invalid-feedback">
+                    Security code required
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Delivery instructions</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+
+              <hr class="my-4">
+
+              <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+            </form>
+          </div>
+
+          <div class="bs-component">
+            <form class="row g-3">
+
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                  <label class="form-check-label" for="flexCheckChecked">
+                    Checked checkbox
+                  </label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                  <label class="form-check-label" for="flexCheckIndeterminate">
+                    Indeterminate checkbox
+                  </label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Default radio
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Default checked radio
+                  </label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                  <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" disabled>
+                  <label class="form-check-label" for="flexSwitchCheckDisabled">Disabled switch checkbox input</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                  <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Disabled checked switch checkbox input</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                  <label class="form-check-label" for="inlineCheckbox2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                  <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="my-2">
+                  <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="btn-check-outlined">Single toggle</label>
+                </div>
+
+                <div class="my-2">
+                  <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
+                  <label class="btn btn-outline-secondary" for="btn-check-2-outlined">Checked</label>
+                </div>
+
+                <div class="my-2">
+                  <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off"
+                         checked>
+                  <label class="btn btn-outline-success" for="success-outlined">Checked success radio</label>
+
+                  <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+                  <label class="btn btn-outline-danger" for="danger-outlined">Danger radio</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+              </div>
+            </form>
+          </div>
+
+          <h3 class="my-4">Horizontal form</h3>
+          <div class="bs-component">
+            <form>
+              <div class="row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail3">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="inputPassword3">
+                </div>
+              </div>
+              <fieldset class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                    <label class="form-check-label" for="gridRadios1">
+                      First radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <label class="form-check-label" for="gridRadios2">
+                      Second radio
+                    </label>
+                  </div>
+                  <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                    <label class="form-check-label" for="gridRadios3">
+                      Third disabled radio
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="row mb-3">
+                <div class="col-sm-10 offset-sm-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                      Example checkbox
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+          </div>
+
+          <h3 class="my-4">Horizontal form label sizing</h3>
+          <div class="bs-component">
+            <form>
+              <fieldset>
+                <div class="row mb-3">
+                  <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="col-form-label-sm">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                  </div>
+                </div>
+                <div class="row">
+                  <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg" placeholder="col-form-label-lg">
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+          <h3 class="my-4">File input</h3>
+          <div class="bs-component">
+            <form>
+              <div class="mb-3">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" type="file" id="formFile">
+              </div>
+              <div class="mb-3">
+                <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+                <input class="form-control" type="file" id="formFileMultiple" multiple>
+              </div>
+              <div class="mb-3">
+                <label for="formFileDisabled" class="form-label">Disabled file input example</label>
+                <input class="form-control" type="file" id="formFileDisabled" disabled>
+              </div>
+              <div class="mb-3">
+                <label for="formFileSm" class="form-label">Small file input example</label>
+                <input class="form-control form-control-sm" id="formFileSm" type="file">
+              </div>
+              <div>
+                <label for="formFileLg" class="form-label">Large file input example</label>
+                <input class="form-control form-control-lg" id="formFileLg" type="file">
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <div class="col-lg-4 offset-lg-1">
+
+          <h3 class="my-4">Range</h3>
+          <div class="bs-component">
+            <form>
+              <label for="customRange1" class="form-label">Example range</label>
+              <input type="range" class="form-range" id="customRange1">
+
+              <label for="disabledRange" class="form-label">Disabled range</label>
+              <input type="range" class="form-range" id="disabledRange" disabled>
+            </form>
+          </div>
+
+          <h3 class="my-4">Input groups</h3>
+          <div class="bs-component">
+            <form>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <span class="input-group-text" id="basic-addon2">@example.com</span>
+              </div>
+
+              <label for="basic-url" class="form-label">Your vanity URL</label>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-text">.00</span>
+              </div>
+
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">With textarea</span>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+              </div>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <span class="input-group-text">0.00</span>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+              </div>
+
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+              </div>
+
+              <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary" type="button">Button</button>
+                <button class="btn btn-outline-secondary" type="button">Button</button>
+                <input type="text" class="form-control" placeholder="" aria-label="Example text with two button addons">
+              </div>
+
+              <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+                <input type="text" class="form-control" aria-label="Text input with dropdown button">
+              </div>
+
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                <button type="button" class="btn btn-outline-secondary">Action</button>
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+              </div>
+
+              <div class="input-group mb-3">
+                <select class="form-select" id="inputGroupSelect02">
+                  <option selected>Choose...</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                <label class="input-group-text" for="inputGroupSelect02">Options</label>
+              </div>
+
+              <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Button</button>
+                <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload">
+              </div>
+            </form>
+          </div>
+
+          <h3 class="my-4">Floating labels</h3>
+          <div class="bs-component">
+            <form>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value="test@example.com">
+                <label for="floatingInputValue">Input with value</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control is-invalid" id="floatingInputInvalid" placeholder="name@example.com" value="test@example.com">
+                <label for="floatingInputInvalid">Invalid input</label>
+              </div>
+
+            </form>
+          </div>
+
+
+          <h3 class="my-4">Validation</h3>
+          <div class="bs-component">
+            <form>
+
+              <fieldset disabled>
+                <legend>Disabled fieldset example</legend>
+                <div class="mb-3">
+                  <label for="disabledTextInput" class="form-label">Disabled input</label>
+                  <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+                </div>
+                <div class="mb-3">
+                  <label for="disabledSelect" class="form-label">Disabled select menu</label>
+                  <select id="disabledSelect" class="form-select">
+                    <option>Disabled select</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+                    <label class="form-check-label" for="disabledFieldsetCheck">
+                      Can't check this
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="form-group mb-3">
+                <fieldset>
+                  <label class="control-label" for="readOnlyInput">Readonly input</label>
+                  <input class="form-control" id="readOnlyInput" type="text" placeholder="Readonly input here…" readonly>
+                </fieldset>
+              </div>
+
+              <div class="form-group has-success mb-3">
+                <label class="form-control-label" for="inputSuccess1">Valid input</label>
+                <input type="text" value="correct value" class="form-control is-valid" id="inputSuccess1">
+                <div class="valid-feedback">Success! You've done it.</div>
+              </div>
+
+              <div class="form-group has-danger mb-3">
+                <label class="form-control-label" for="inputDanger1">Invalid input</label>
+                <input type="text" value="wrong value" class="form-control is-invalid" id="inputDanger1">
+                <div class="invalid-feedback">Sorry, that username's taken. Try another?</div>
+              </div>
+
+            </form>
+          </div>
+
+          <h3 class="my-4">Color</h3>
+          <div class="bs-component">
+            <form>
+              <label for="exampleColorInput" class="form-label">Color picker</label>
+              <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+            </form>
+          </div>
+
+          <h3 class="my-4">Datalists</h3>
+          <div class="bs-component">
+            <form>
+              <label for="exampleDataList" class="form-label">Datalist example</label>
+              <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+              <datalist id="datalistOptions">
+                <option value="San Francisco">
+                <option value="New York">
+                <option value="Seattle">
+                <option value="Los Angeles">
+                <option value="Chicago">
+              </datalist>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Navs
+    ================================================== -->
+    <div class="bs-docs-section">
+
+      <div class="row">
+        <div class="col-lg-12 my-5">
+          <div class="page-header">
+            <h1 id="navs">Navs</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-2">
+
+        <div class="col-lg-6">
+          <h2 id="nav-tabs">Tabs</h2>
+
+
+          <div class="bs-component">
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Active</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bs-component">
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Active</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+          <h2 id="nav-pills">Pills</h2>
+
+          <div class="bs-component mb-2">
+            <ul class="nav nav-pills">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Active</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bs-component mb-2">
+            <ul class="nav nav-pills nav-fill">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Active</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Much longer nav link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bs-component mb-2">
+            <ul class="nav nav-pills flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                   aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-2">
+
+        <div class="col-lg-6">
+          <h2 id="nav-breadcrumbs">Breadcrumbs</h2>
+          <div class="row mb-2">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item active">Home</li>
+            </ol>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Library</li>
+            </ol>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Library</a></li>
+              <li class="breadcrumb-item active">Data</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <h2 id="pagination">Pagination</h2>
+          <div class="bs-component">
+            <div>
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">&laquo;</a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">5</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">&raquo;</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <ul class="pagination pagination-lg">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">&laquo;</a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">&raquo;</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <ul class="pagination pagination-sm">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">&laquo;</a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">5</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">&raquo;</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indicators
+    ================================================== -->
+    <div class="bs-docs-section">
+
+      <div class="row">
+        <div class="col-lg-12 my-5">
+          <div class="page-header">
+            <h1 id="indicators">Indicators</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Alerts</h2>
+          <div class="bs-component">
+            <div class="alert alert-dismissible alert-warning">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <h3 class="alert-heading">Warning!</h3>
+              <p class="mb-0">Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra
+                augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur
+                  et</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="bs-component">
+            <div class="alert alert-dismissible alert-danger">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting
+              again.
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="bs-component">
+            <div class="alert alert-dismissible alert-success">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert
+              message</a>.
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="bs-component">
+            <div class="alert alert-dismissible alert-info">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's
+              not super important.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="bs-component">
+            <div class="alert alert-dismissible alert-primary">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting
+              again.
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="bs-component">
+            <div class="alert alert-dismissible alert-secondary">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert
+              message</a>.
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="bs-component">
+            <div class="alert alert-dismissible alert-light text-dark">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's
+              not super important.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>Badges</h2>
+        <div class="bs-component" style="margin-bottom: 40px;">
+          <span class="badge badge-lg badge-primary">Primary</span>
+          <span class="badge badge-lg badge-secondary">Secondary</span>
+          <span class="badge badge-lg badge-success">Success</span>
+          <span class="badge badge-lg badge-danger">Danger</span>
+          <span class="badge badge-lg badge-warning">Warning</span>
+          <span class="badge badge-lg badge-info">Info</span>
+          <span class="badge badge-lg badge-light">Light</span>
+          <span class="badge badge-lg badge-dark">Dark</span>
+        </div>
+        <div class="bs-component" style="margin-bottom: 40px;">
+          <span class="badge badge-primary">Primary</span>
+          <span class="badge badge-secondary">Secondary</span>
+          <span class="badge badge-success">Success</span>
+          <span class="badge badge-danger">Danger</span>
+          <span class="badge badge-warning">Warning</span>
+          <span class="badge badge-info">Info</span>
+          <span class="badge badge-light">Light</span>
+          <span class="badge badge-dark">Dark</span>
+        </div>
+        <div class="bs-component">
+          <span class="badge badge-pill badge-primary">Primary</span>
+          <span class="badge badge-pill badge-secondary">Secondary</span>
+          <span class="badge badge-pill badge-success">Success</span>
+          <span class="badge badge-pill badge-danger">Danger</span>
+          <span class="badge badge-pill badge-warning">Warning</span>
+          <span class="badge badge-pill badge-info">Info</span>
+          <span class="badge badge-pill badge-light">Light</span>
+          <span class="badge badge-pill badge-dark">Dark</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress
+    ================================================== -->
+    <div class="bs-docs-section">
+
+      <div class="row">
+        <div class="col-lg-12 my-5">
+          <div class="page-header">
+            <h1 id="progress">Progress</h1>
+          </div>
+          <h2 id="progress-spinner">Spinners</h2>
+          <div class="bs-component mb-3">
+            <div class="text-center">
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" type="button" disabled>
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Loading...
+            </button>
+          </div>
+          <h2 id="progress-basic">Basic</h2>
+          <div class="bs-component">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                   aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <h2 id="progress-alternatives">Contextual alternatives</h2>
+          <div class="bs-component">
+            <div class="progress">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25"
+                   aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50"
+                   aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75"
+                   aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100"
+                   aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <h2 id="progress-multiple">Multiple bars</h2>
+          <div class="bs-component">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0"
+                   aria-valuemax="100"></div>
+              <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30"
+                   aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20"
+                   aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <h2 id="progress-striped">Striped</h2>
+          <div class="bs-component">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10"
+                   aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%"
+                   aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%"
+                   aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%"
+                   aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%"
+                   aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <h2 id="progress-animated">Animated</h2>
+          <div class="bs-component">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                   aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Containers
+    ================================================== -->
+    <div class="bs-docs-section">
+
+      <div class="row">
+        <div class="col-lg-12 my-5">
+          <div class="page-header">
+            <h1 id="containers">Containers</h1>
+          </div>
+          <div class="bs-component">
+            <div class="jumbotron">
+              <h1 class="display-3">Hello, world!</h1>
+              <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
+                to featured content or information.</p>
+              <hr class="my-4">
+              <p>It uses utility classes for typography and spacing to space content out within the larger
+                container.</p>
+              <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>List groups</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="bs-component">
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Cras justo odio
+                <span class="badge badge-primary badge-pill">14</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Dapibus ac facilisis in
+                <span class="badge badge-primary badge-pill">2</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Morbi leo risus
+                <span class="badge badge-primary badge-pill">1</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="bs-component">
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action active">
+                Cras justo odio
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in
+              </a>
+              <a href="#" class="list-group-item list-group-item-action disabled">Morbi leo risus
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="bs-component">
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="d-flex w-100 justify-content-between">
+                  <h2 class="mb-1">List group item heading</h2>
+                  <small>3 days ago</small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                  blandit.</p>
+                <small>Donec id elit non mi porta.</small>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h2 class="mb-1">List group item heading</h2>
+                  <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                  blandit.</p>
+                <small class="text-muted">Donec id elit non mi porta.</small>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>Cards</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="bs-component">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Primary card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Secondary card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+            <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Success card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+            <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Danger card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+            <div class="card bg-warning mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Warning card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+            <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Info card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+            <div class="card bg-light mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Light card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+            <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Dark card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="bs-component">
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Primary card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+            <div class="card border-secondary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Secondary card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+            <div class="card border-success mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Success card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+            <div class="card border-danger mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Danger card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+            <div class="card border-warning mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Warning card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+            <div class="card border-info mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Info card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+            <div class="card border-light mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Light card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+            <div class="card border-dark mb-3" style="max-width: 20rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <div class="h4 card-title">Dark card title</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="bs-component">
+            <div class="card mb-3">
+              <div class="h3 card-header">Card header</div>
+              <div class="card-body">
+                <div class="h6 card-title">Special title treatment</div>
+                <div class="h6 card-subtitle text-muted">Support card subtitle</div>
+              </div>
+              <img style="height: 200px; width: 100%; display: block;"
+                   src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                   alt="Card image">
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+              <div class="card-footer text-dark">
+                2 days ago
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <div class="h4 card-title">Card title</div>
+                <div class="h6 card-subtitle mb-2 text-muted">Card subtitle</div>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>Borders</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="bs-component">
+            <span class="d-inline-block w-25 bg-light border m-3 p-3">border</span>
+            <span class="d-inline-block w-25 bg-light border border-0 m-3 p-3">border-0</span>
+            <span class="d-inline-block w-25 bg-light border border-top-0 m-3 p-3">border-top-0</span>
+            <span class="d-inline-block w-25 bg-light border border-right-0 m-3 p-3">border-right-0</span>
+            <span class="d-inline-block w-25 bg-light border border-bottom-0 m-3 p-3">border-bottom-0 </span>
+            <span class="d-inline-block w-25 bg-light border border-left-0 m-3 p-3">border-left-0</span>
+          </div>
+          <div class="bs-component">
+            <span class="border border-primary d-inline-block w-25 m-3 p-3">border-primary</span>
+            <span class="border border-secondary d-inline-block w-25 m-3 p-3">border-secondary</span>
+            <span class="border border-success d-inline-block w-25 m-3 p-3">border-success</span>
+            <span class="border border-danger d-inline-block w-25 m-3 p-3">border-danger</span>
+            <span class="border border-warning d-inline-block w-25 m-3 p-3">border-warning</span>
+            <span class="border border-info d-inline-block w-25 m-3 p-3">border-info</span>
+            <span class="border border-light d-inline-block w-25 m-3 p-3">border-light</span>
+            <span class="border border-dark d-inline-block w-25 m-3 p-3">border-dark</span>
+            <span class="border border-white d-inline-block w-25 m-3 p-3">border-white</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dialogs
+    ================================================== -->
+    <div class="bs-docs-section">
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header my-5">
+            <h1 id="dialogs">Dialogs</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Modals</h2>
+          <div class="bs-component">
+            <div class="modal">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title">Modal title</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h2>Popovers</h2>
+          <div class="bs-component" style="margin-bottom: 3em;">
+            <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body"
+                    data-toggle="popover" data-placement="left"
+                    data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Left
+            </button>
+
+            <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body"
+                    data-toggle="popover" data-placement="top"
+                    data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Top
+            </button>
+
+            <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body"
+                    data-toggle="popover" data-placement="bottom" data-content="Vivamus
+                sagittis lacus vel augue laoreet rutrum faucibus.">Bottom
+            </button>
+
+            <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body"
+                    data-toggle="popover" data-placement="right"
+                    data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Right
+            </button>
+          </div>
+          <h2>Tooltips</h2>
+          <div class="bs-component">
+            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left"
+                    title="Tooltip on left">Left
+            </button>
+
+            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
+                    title="Tooltip on top">Top
+            </button>
+
+            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom"
+                    title="Tooltip on bottom">Bottom
+            </button>
+
+            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right"
+                    title="Tooltip on right">Right
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="source-modal" class="modal fade">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Source Code</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <pre contenteditable></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer id="footer" class="bg-primary text-light mt-3">
+  <div class="row container mx-auto">
+    <div class="col-lg-12">
+      <h1>Footer</h1>
+      <p>Some footer text</p>
+    </div>
+  </div>
+</footer>
+
+<!--    <script src="//code.jquery.com/jquery-3.3.1.slim.min.js"></script>-->
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+<!--    <script src="show-source.js"></script>-->
+</body>
+</html>

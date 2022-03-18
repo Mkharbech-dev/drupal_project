@@ -1,1 +1,50 @@
 
+.bienvenue{
+  background: grey;
+  text-align: center;
+  color: yellow;
+}
+.boot-header {
+ text-align: center;
+}
+.header{
+  background: black;
+}
+
+.panache-header-menu .menu-item a{
+  color: white;
+  text-decoration: none;
+}
+
+.theme{
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-bottom: 4px;
+}
+#dark{
+  background-color: black;
+  border: 1px solid white;
+}
+#salmon{
+  background-color: salmon;
+  border: 1px solid white;
+}
+#yellow{
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+.darkTheme{
+  background-color: black;
+  color: white;
+}
+.salmonTheme{
+  background-color: salmon;
+  color: black;
+}
+.yellowTheme{
+  background-color: yellow;
+  color: black;
+}

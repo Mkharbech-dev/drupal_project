@@ -40,14 +40,26 @@
  * @see html.html.twig
  */
 #}
-<div id="page-wrapper">
-  <header>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<div class="container" id="page-wrapper">
+  <header class="header">
     {% include '@panache/includes/header.html.twig' %}
 
     {% if page.header_navigation %}
       {% include '@panache/includes/header-navigation.html.twig' %}
     {% endif %}
   </header>
+<div class="row m-3">
+  <div class=" col-1 themeContainer">
+    <div class="theme" id="dark"></div>
+    <div class="theme" id="salmon"></div>
+    <div class="theme" id="yellow"></div>
+  </div>
+  <div class="text text-align-center col-11">
+    <p class="once p-1 m-2">clique moi pour agrandir la taille de police</p>
+  </div>
+</div>
   <main class="main-wrapper">
     {% if page.banner_slideshow %}
       {{ page.banner_slideshow }}
@@ -118,3 +130,38 @@
   </footer>
 </div>
 <div>{{ formation.salah_var }}</div>
+<script>
+  //fonction once jquery
+  $(document).ready(function(){
+    $(".once").one("click", function(){
+      $(this).animate({fontSize: "+=14px"});
+    });
+  });
+
+  const theme  = document.querySelectorAll('.theme');
+  const once = document.querySelector('.once');
+
+  theme.forEach((item) => {
+    item.addEventListener('click', ()=>{
+      // au debut tu enleve les classe suivantes s'elles exisitent deja
+      once.classList.remove("darkTheme","salmonTheme","yellowTheme");
+      console.log(item.id);
+      // je fais un switch
+      switch (item.id) {
+        case "dark":
+          once.classList.add("darkTheme");
+          break;
+        case "salmon":
+          once.classList.add("salmonTheme");
+          break;
+        case "yellow":
+          once.classList.add("yellowTheme");
+        default:
+          null;
+      }
+    })
+  })
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

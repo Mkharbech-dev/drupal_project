@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '50c02d0e712d7e121b919073858eb4eab6ecd348',
         'name' => 'drupal/recommended-project',
         'dev' => true,
     ),
@@ -231,6 +231,15 @@
             'replaced' => array(
                 0 => '9.3.7',
             ),
+        ),
+        'drupal/bootstrap5' => array(
+            'pretty_version' => '1.1.0',
+            'version' => '1.1.0.0',
+            'type' => 'drupal-theme',
+            'install_path' => __DIR__ . '/../../web/themes/contrib/bootstrap5',
+            'aliases' => array(),
+            'reference' => '1.1.0',
+            'dev_requirement' => false,
         ),
         'drupal/breakpoint' => array(
             'dev_requirement' => false,
@@ -806,12 +815,12 @@
             ),
         ),
         'drupal/recommended-project' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '50c02d0e712d7e121b919073858eb4eab6ecd348',
             'dev_requirement' => false,
         ),
         'drupal/responsive_image' => array(
@@ -986,12 +995,12 @@
             ),
         ),
         'drush/drush' => array(
-            'pretty_version' => '11.0.6',
-            'version' => '11.0.6.0',
+            'pretty_version' => '11.0.7',
+            'version' => '11.0.7.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../drush/drush',
             'aliases' => array(),
-            'reference' => '5c0f0ec9a659557d4fe6fd5dc72ca26dab73e1ac',
+            'reference' => '6991a3b8f6827d0bab13005402730fc50d130a50',
             'dev_requirement' => false,
         ),
         'egulias/email-validator' => array(
@@ -1461,8 +1470,8 @@
             'dev_requirement' => false,
         ),
         'symfony/polyfill-php72' => array(
-            'pretty_version' => 'v1.24.0',
-            'version' => '1.24.0.0',
+            'pretty_version' => 'v1.25.0',
+            'version' => '1.25.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/polyfill-php72',
             'aliases' => array(),
@@ -1470,8 +1479,8 @@
             'dev_requirement' => false,
         ),
         'symfony/polyfill-php73' => array(
-            'pretty_version' => 'v1.24.0',
-            'version' => '1.24.0.0',
+            'pretty_version' => 'v1.25.0',
+            'version' => '1.25.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/polyfill-php73',
             'aliases' => array(),
